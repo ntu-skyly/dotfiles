@@ -17,6 +17,7 @@ set expandtab
 set fileencoding=utf8
 set fileencodings=utf8,big5
 " set foldmethod=syntax
+set foldmethod=marker
 set formatoptions+=j
 " set foldnestmax=2
 set hidden
@@ -115,3 +116,7 @@ highlight FoldColumn ctermbg=234 guifg=Cyan guibg=Grey
 " set statusline+=\ %2*[%{&encoding}/%{&fileformat}/%Y]
 " set statusline+=\ %3*%l,%c
 " set statusline+=\ %4*%-4P
+
+nmap \c :!g++ % -std=c++14 -Wno-unused-result -Wall -Wshadow -Wconversion -Ofast -DLOCAL_TEST -o %< <CR>
+nmap \p :!./%< <CR>
+nmap \r :r ~/template.cpp<CR> ggdd :108<CR>A
